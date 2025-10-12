@@ -28,25 +28,44 @@ void heapSort(int arr[], int size) {
     }
 }
 
-// ------------------- QUICKSORT -------------------
-int particionar(int arreglo[], int indiceInicial, int indiceFinal) {
-    int pivote = arreglo[indiceFinal];
-    int indiceMenor = indiceInicial - 1;
+// ------------------- QUICKSORT BIDIRECCIONAL (Reduce) -------------------
+void Reduce(int A[], int inicio, int final) {
+    int izq = inicio;
+    int der = final;
+    int pos = izq;
+    int cen = 1;
 
-    for (int i = indiceInicial; i < indiceFinal; i++) {
-        if (arreglo[i] <= pivote) {
-            indiceMenor++;
-            std::swap(arreglo[indiceMenor], arreglo[i]);
+    while (cen == 1) {
+        cen = 0;
+
+        // ---- Recorrido de derecha a izquierda ----
+        while (A[pos] <= A[der] && pos != der)
+            der--;
+
+        if (pos != der) {
+            int aux = A[pos];
+            A[pos] = A[der];
+            A[der] = aux;
+            pos = der;
+
+            // ---- Recorrido de izquierda a derecha ----
+            while (A[pos] >= A[izq] && pos != izq)
+                izq++;
+
+            if (pos != izq) {
+                aux = A[pos];
+                A[pos] = A[izq];
+                A[izq] = aux;
+                pos = izq;
+                cen = 1;
+            }
         }
-    }
-    std::swap(arreglo[indiceMenor + 1], arreglo[indiceFinal]);
-    return indiceMenor + 1;
-}
 
-void quickSort(int arreglo[], int indiceInicial, int indiceFinal) {
-    if (indiceInicial < indiceFinal) {
-        int posicionPivote = particionar(arreglo, indiceInicial, indiceFinal);
-        quickSort(arreglo, indiceInicial, posicionPivote - 1);
-        quickSort(arreglo, posicionPivote + 1, indiceFinal);
+        // ---- Llamadas recursivas ----
+        if (pos - 1 > inicio)
+            Reduce(A, inicio, pos - 1);
+
+        if (pos + 1 < final)
+            Reduce(A, pos + 1, final);
     }
 }
