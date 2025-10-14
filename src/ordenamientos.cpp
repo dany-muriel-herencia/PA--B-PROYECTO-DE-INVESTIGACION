@@ -1,17 +1,21 @@
 #include "ordenamientos.h"
-#include <algorithm> // para swap
+#include <algorithm> // para std::swap
 
 // ------------------- HEAPSORT -------------------
 void heapify(int arr[], int size, int i) {
     int largest = i;
-    int left = 2*i + 1;
-    int right = 2*i + 2;
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
 
+    // Verifica si el hijo izquierdo es mayor que la raíz
     if (left < size && arr[left] > arr[largest])
         largest = left;
+
+    // Verifica si el hijo derecho es mayor que el mayor actual
     if (right < size && arr[right] > arr[largest])
         largest = right;
 
+    // Si el mayor no es la raíz, intercambia y sigue heapificando
     if (largest != i) {
         std::swap(arr[i], arr[largest]);
         heapify(arr, size, largest);
@@ -19,53 +23,48 @@ void heapify(int arr[], int size, int i) {
 }
 
 void heapSort(int arr[], int size) {
-    for (int i = size/2 - 1; i >= 0; --i)
+    // Construye el heap (reorganiza el arreglo)
+    for (int i = size / 2 - 1; i >= 0; --i)
         heapify(arr, size, i);
 
+    // Extrae los elementos uno por uno del heap
     for (int i = size - 1; i >= 0; --i) {
-        std::swap(arr[0], arr[i]);
-        heapify(arr, i, 0);
+        std::swap(arr[0], arr[i]); // mueve la raíz actual al final
+        heapify(arr, i, 0);        // llama heapify sobre el heap reducido
     }
 }
 
-// ------------------- QUICKSORT BIDIRECCIONAL (Reduce) -------------------
-void Reduce(int A[], int inicio, int final) {
-    int izq = inicio;
-    int der = final;
-    int pos = izq;
-    int cen = 1;
+// ------------------- QUICKSORT PIVOTE EN EL MEDIO -------------------
+void quickSort(int A[], int inicio, int fin) {
+    int i = inicio;
+    int j = fin;
 
-    while (cen == 1) {
-        cen = 0;
+    // Elegir el pivote como el elemento del medio
+    int pivote = A[(inicio + fin) / 2];
 
-        // ---- Recorrido de derecha a izquierda ----
-        while (A[pos] <= A[der] && pos != der)
-            der--;
+    // Mientras los índices no se crucen
+    while (i <= j) {
+        // Avanza desde la izquierda mientras A[i] < pivote
+        while (A[i] < pivote)
+            i++;
 
-        if (pos != der) {
-            int aux = A[pos];
-            A[pos] = A[der];
-            A[der] = aux;
-            pos = der;
+        // Retrocede desde la derecha mientras A[j] > pivote
+        while (A[j] > pivote)
+            j--;
 
-            // ---- Recorrido de izquierda a derecha ----
-            while (A[pos] >= A[izq] && pos != izq)
-                izq++;
-
-            if (pos != izq) {
-                aux = A[pos];
-                A[pos] = A[izq];
-                A[izq] = aux;
-                pos = izq;
-                cen = 1;
-            }
+        // Si i <= j, intercambia los elementos
+        if (i <= j) {
+            int aux = A[i];
+            A[i] = A[j];
+            A[j] = aux;
+            i++;
+            j--;
         }
-
-        // ---- Llamadas recursivas ----
-        if (pos - 1 > inicio)
-            Reduce(A, inicio, pos - 1);
-
-        if (pos + 1 < final)
-            Reduce(A, pos + 1, final);
     }
+
+    // Llamadas recursivas en las dos mitades
+    if (inicio < j)
+        quickSort(A, inicio, j);
+    if (i < fin)
+        quickSort(A, i, fin);
 }

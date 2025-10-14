@@ -19,7 +19,8 @@ void mostrarArreglo(int* arr, int n) {
 }
 
 int main() {
-    srand(42);
+    // 🔒 Semilla fija para generar siempre los mismos números
+    srand(12345);  
 
     int opcionAlgoritmo, opcionTamano;
 
@@ -44,7 +45,9 @@ int main() {
 
         int n = (opcionTamano == 1) ? 1000 : (opcionTamano == 2) ? 10000 : 100000;
 
+        // ✅ Mantiene el mismo conjunto aleatorio siempre
         int* arr = new int[n];
+        srand(12345);  // ← Semilla fija para cada generación (reproducible)
         generarDatos(arr, n);
 
         cout << "\nArreglo original (primeros 20 elementos):\n";
@@ -56,7 +59,7 @@ int main() {
         if (opcionAlgoritmo == 1)
             heapSort(arr, n);
         else if (opcionAlgoritmo == 2)
-            quickSort(arr, 0, n-1);
+            quickSort(arr, 0, n - 1);
 
         auto fin = steady_clock::now();
         auto tiempo_ms = duration_cast<milliseconds>(fin - inicio).count();
@@ -65,7 +68,7 @@ int main() {
         for (int i = 0; i < min(n,20); i++) cout << arr[i] << " ";
         cout << (n > 20 ? "...\n" : "\n");
 
-        cout << "\n⏱ Tiempo de ejecución: " << tiempo_ms << " ms\n";
+        cout << "\nTiempo de ejecucion: " << tiempo_ms << " ms\n";
 
         delete[] arr;
 
