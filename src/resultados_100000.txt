@@ -1,0 +1,151 @@
+Iteración,Algoritmo,N,Patrón,Tiempo(ms),Comparaciones,Intercambios,Profundidad,CommitHash
+1,QuickSort,100000,Aleatorio uniforme,16,0,0,0,ABC123
+2,QuickSort,100000,Aleatorio uniforme,15,0,0,0,ABC123
+3,QuickSort,100000,Aleatorio uniforme,17,0,0,0,ABC123
+4,QuickSort,100000,Aleatorio uniforme,17,0,0,0,ABC123
+5,QuickSort,100000,Aleatorio uniforme,13,0,0,0,ABC123
+6,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+7,QuickSort,100000,Aleatorio uniforme,12,0,0,0,ABC123
+8,QuickSort,100000,Aleatorio uniforme,16,0,0,0,ABC123
+9,QuickSort,100000,Aleatorio uniforme,12,0,0,0,ABC123
+10,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+11,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+12,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+13,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+14,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+15,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+16,QuickSort,100000,Aleatorio uniforme,10,0,0,0,ABC123
+17,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+18,QuickSort,100000,Aleatorio uniforme,12,0,0,0,ABC123
+19,QuickSort,100000,Aleatorio uniforme,12,0,0,0,ABC123
+20,QuickSort,100000,Aleatorio uniforme,13,0,0,0,ABC123
+21,QuickSort,100000,Aleatorio uniforme,12,0,0,0,ABC123
+22,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+23,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+24,QuickSort,100000,Aleatorio uniforme,12,0,0,0,ABC123
+25,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+26,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+27,QuickSort,100000,Aleatorio uniforme,12,0,0,0,ABC123
+28,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+29,QuickSort,100000,Aleatorio uniforme,15,0,0,0,ABC123
+30,QuickSort,100000,Aleatorio uniforme,12,0,0,0,ABC123
+1,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+2,QuickSort,100000,Ordenado ascendente,2,0,0,0,ABC123
+3,QuickSort,100000,Ordenado ascendente,2,0,0,0,ABC123
+4,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+5,QuickSort,100000,Ordenado ascendente,0,0,0,0,ABC123
+6,QuickSort,100000,Ordenado ascendente,2,0,0,0,ABC123
+7,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+8,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+9,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+10,QuickSort,100000,Ordenado ascendente,2,0,0,0,ABC123
+11,QuickSort,100000,Ordenado ascendente,3,0,0,0,ABC123
+12,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+13,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+14,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+15,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+16,QuickSort,100000,Ordenado ascendente,0,0,0,0,ABC123
+17,QuickSort,100000,Ordenado ascendente,2,0,0,0,ABC123
+18,QuickSort,100000,Ordenado ascendente,2,0,0,0,ABC123
+19,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+20,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+21,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+22,QuickSort,100000,Ordenado ascendente,2,0,0,0,ABC123
+23,QuickSort,100000,Ordenado ascendente,2,0,0,0,ABC123
+24,QuickSort,100000,Ordenado ascendente,2,0,0,0,ABC123
+25,QuickSort,100000,Ordenado ascendente,3,0,0,0,ABC123
+26,QuickSort,100000,Ordenado ascendente,2,0,0,0,ABC123
+27,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+28,QuickSort,100000,Ordenado ascendente,1,0,0,0,ABC123
+29,QuickSort,100000,Ordenado ascendente,2,0,0,0,ABC123
+30,QuickSort,100000,Ordenado ascendente,2,0,0,0,ABC123
+1,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+2,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+3,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+4,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+5,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+6,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+7,QuickSort,100000,Ordenado descendente,0,0,0,0,ABC123
+8,QuickSort,100000,Ordenado descendente,0,0,0,0,ABC123
+9,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+10,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+11,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+12,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+13,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+14,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+15,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+16,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+17,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+18,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+19,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+20,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+21,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+22,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+23,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+24,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+25,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+26,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+27,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+28,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+29,QuickSort,100000,Ordenado descendente,1,0,0,0,ABC123
+30,QuickSort,100000,Ordenado descendente,2,0,0,0,ABC123
+1,QuickSort,100000,Casi ordenado 5%,3,0,0,0,ABC123
+2,QuickSort,100000,Casi ordenado 5%,3,0,0,0,ABC123
+3,QuickSort,100000,Casi ordenado 5%,3,0,0,0,ABC123
+4,QuickSort,100000,Casi ordenado 5%,3,0,0,0,ABC123
+5,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+6,QuickSort,100000,Casi ordenado 5%,3,0,0,0,ABC123
+7,QuickSort,100000,Casi ordenado 5%,3,0,0,0,ABC123
+8,QuickSort,100000,Casi ordenado 5%,4,0,0,0,ABC123
+9,QuickSort,100000,Casi ordenado 5%,3,0,0,0,ABC123
+10,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+11,QuickSort,100000,Casi ordenado 5%,3,0,0,0,ABC123
+12,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+13,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+14,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+15,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+16,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+17,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+18,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+19,QuickSort,100000,Casi ordenado 5%,4,0,0,0,ABC123
+20,QuickSort,100000,Casi ordenado 5%,3,0,0,0,ABC123
+21,QuickSort,100000,Casi ordenado 5%,1,0,0,0,ABC123
+22,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+23,QuickSort,100000,Casi ordenado 5%,3,0,0,0,ABC123
+24,QuickSort,100000,Casi ordenado 5%,3,0,0,0,ABC123
+25,QuickSort,100000,Casi ordenado 5%,4,0,0,0,ABC123
+26,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+27,QuickSort,100000,Casi ordenado 5%,3,0,0,0,ABC123
+28,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+29,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+30,QuickSort,100000,Casi ordenado 5%,2,0,0,0,ABC123
+1,QuickSort,100000,Duplicados 10-20,4,0,0,0,ABC123
+2,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+3,QuickSort,100000,Duplicados 10-20,7,0,0,0,ABC123
+4,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+5,QuickSort,100000,Duplicados 10-20,4,0,0,0,ABC123
+6,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+7,QuickSort,100000,Duplicados 10-20,6,0,0,0,ABC123
+8,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+9,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+10,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+11,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+12,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+13,QuickSort,100000,Duplicados 10-20,4,0,0,0,ABC123
+14,QuickSort,100000,Duplicados 10-20,6,0,0,0,ABC123
+15,QuickSort,100000,Duplicados 10-20,6,0,0,0,ABC123
+16,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+17,QuickSort,100000,Duplicados 10-20,4,0,0,0,ABC123
+18,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+19,QuickSort,100000,Duplicados 10-20,4,0,0,0,ABC123
+20,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+21,QuickSort,100000,Duplicados 10-20,4,0,0,0,ABC123
+22,QuickSort,100000,Duplicados 10-20,4,0,0,0,ABC123
+23,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+24,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+25,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+26,QuickSort,100000,Duplicados 10-20,4,0,0,0,ABC123
+27,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+28,QuickSort,100000,Duplicados 10-20,4,0,0,0,ABC123
+29,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123
+30,QuickSort,100000,Duplicados 10-20,5,0,0,0,ABC123

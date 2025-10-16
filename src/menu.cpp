@@ -8,11 +8,9 @@
 
 using namespace std;
 
-
 long long comparaciones = 0;
 long long intercambios = 0;
 int profundidad = 0;
-
 
 string nombrePatron(int opcionSemilla) {
     switch(opcionSemilla) {
@@ -25,7 +23,7 @@ string nombrePatron(int opcionSemilla) {
     }
 }
 
-// Funciones de generación de arreglos
+// Funciones de generaciÃ³n de arreglos
 vector<int> generarArreglo(int size, int tipoSemilla) {
     vector<int> arr(size);
     random_device rd;
@@ -51,7 +49,7 @@ vector<int> generarArreglo(int size, int tipoSemilla) {
             }
             break;
         }
-        case 5: { // Con duplicados (10–20 valores únicos)
+        case 5: { // Con duplicados (10â€“20 valores Ãºnicos)
             uniform_int_distribution<> dis(1, 20);
             for (int i = 0; i < size; ++i) arr[i] = dis(gen);
             break;
@@ -62,35 +60,45 @@ vector<int> generarArreglo(int size, int tipoSemilla) {
     return arr;
 }
 
-// Función menú
+// FunciÃ³n menÃº
 void menu() {
     int opcionAlgoritmo, opcionTamano, opcionSemilla;
     vector<int> tamanos = {1000, 10000, 100000};
 
-    cout << "=== MENÚ DE ORDENAMIENTO ===\n";
+    cout << "=== MENÃš DE ORDENAMIENTO ===\n";
     cout << "1. QuickSort\n";
     cout << "2. HeapSort\n";
-    cout << "Elige algoritmo: ";
+    cout << "Elige algoritmo (1 o 2): ";
     cin >> opcionAlgoritmo;
 
-    cout << "Tamaño del arreglo:\n";
-    cout << "1. 1000\n2. 10000\n3. 100000\nElige opción: ";
+    cout << "TamaÃ±o del arreglo:\n";
+    for (int i = 0; i < tamanos.size(); i++) {
+        cout << i+1 << ". " << tamanos[i] << "\n";
+    }
+    cout << "Elige opciÃ³n (1-3): ";
     cin >> opcionTamano;
+    if(opcionTamano < 1 || opcionTamano > 3) {
+        cout << "OpciÃ³n invÃ¡lida, usando tamaÃ±o 1000 por defecto.\n";
+        opcionTamano = 1;
+    }
     int N = tamanos[opcionTamano-1];
 
     cout << "Tipo de semilla:\n";
     cout << "1. Aleatorio uniforme\n2. Ordenado ascendente\n3. Ordenado descendente\n";
-    cout << "4. Casi ordenado (5%)\n5. Con duplicados (10-20 valores únicos)\nElige opción: ";
+    cout << "4. Casi ordenado (5%)\n5. Con duplicados (10-20 valores Ãºnicos)\nElige opciÃ³n (1-5): ";
     cin >> opcionSemilla;
+    if(opcionSemilla < 1 || opcionSemilla > 5) {
+        cout << "OpciÃ³n invÃ¡lida, usando semilla Aleatorio uniforme por defecto.\n";
+        opcionSemilla = 1;
+    }
 
-    // Abrir archivo para guardar resultados
     ofstream archivo("resultados_ordenamiento.txt", ios::out);
     if (!archivo.is_open()) {
         cerr << "Error al abrir el archivo para guardar resultados.\n";
         return;
     }
 
-    archivo << "Iteración,Algoritmo,N,Patrón,Tiempo(ms),Comparaciones,Intercambios,Profundidad,CommitHash\n";
+    archivo << "IteraciÃ³n,Algoritmo,N,PatrÃ³n,Tiempo(ms),Comparaciones,Intercambios,Profundidad,CommitHash\n";
 
     // Ejecutar 30 veces
     for (int iter = 0; iter < 30; ++iter) {
@@ -115,10 +123,10 @@ void menu() {
         string patron = nombrePatron(opcionSemilla);
         string commitHash = "ABC123";
 
-        cout << "Iteración " << iter+1 << ": "
+        cout << "IteraciÃ³n " << iter+1 << ": "
              << "Algoritmo=" << algoritmo
              << ", N=" << N
-             << ", Patrón=" << patron
+             << ", PatrÃ³n=" << patron
              << ", Tiempo=" << tiempo << "ms"
              << ", Comparaciones=" << comparaciones
              << ", Intercambios=" << intercambios
@@ -134,8 +142,8 @@ void menu() {
     cout << "\nResultados guardados en 'resultados_ordenamiento.txt'\n";
 }
 
-// Función principal
 int main() {
     menu();
     return 0;
 }
+

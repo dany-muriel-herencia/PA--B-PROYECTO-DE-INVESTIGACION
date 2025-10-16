@@ -1,151 +1,31 @@
 Iteración,Algoritmo,N,Patrón,Tiempo(ms),Comparaciones,Intercambios,Profundidad,CommitHash
-1,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-2,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-3,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-4,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-5,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-6,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-7,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-8,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-9,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-10,HipSort,10000,Aleatorio uniforme,3,0,0,0,ABC123
-11,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-12,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-13,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-14,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-15,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-16,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-17,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-18,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-19,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-20,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-21,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-22,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-23,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-24,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-25,HipSort,10000,Aleatorio uniforme,3,0,0,0,ABC123
-26,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-27,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-28,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-29,HipSort,10000,Aleatorio uniforme,2,0,0,0,ABC123
-30,HipSort,10000,Aleatorio uniforme,1,0,0,0,ABC123
-1,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-2,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-3,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-4,HipSort,10000,Ordenado ascendente,1,0,0,0,ABC123
-5,HipSort,10000,Ordenado ascendente,1,0,0,0,ABC123
-6,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-7,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-8,HipSort,10000,Ordenado ascendente,1,0,0,0,ABC123
-9,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-10,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-11,HipSort,10000,Ordenado ascendente,1,0,0,0,ABC123
-12,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-13,HipSort,10000,Ordenado ascendente,1,0,0,0,ABC123
-14,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-15,HipSort,10000,Ordenado ascendente,1,0,0,0,ABC123
-16,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-17,HipSort,10000,Ordenado ascendente,1,0,0,0,ABC123
-18,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-19,HipSort,10000,Ordenado ascendente,1,0,0,0,ABC123
-20,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-21,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-22,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-23,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-24,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-25,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-26,HipSort,10000,Ordenado ascendente,1,0,0,0,ABC123
-27,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-28,HipSort,10000,Ordenado ascendente,1,0,0,0,ABC123
-29,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-30,HipSort,10000,Ordenado ascendente,2,0,0,0,ABC123
-1,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-2,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-3,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-4,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-5,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-6,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-7,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-8,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-9,HipSort,10000,Ordenado descendente,3,0,0,0,ABC123
-10,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-11,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-12,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-13,HipSort,10000,Ordenado descendente,0,0,0,0,ABC123
-14,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-15,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-16,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-17,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-18,HipSort,10000,Ordenado descendente,3,0,0,0,ABC123
-19,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-20,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-21,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-22,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-23,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-24,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-25,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-26,HipSort,10000,Ordenado descendente,2,0,0,0,ABC123
-27,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-28,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-29,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-30,HipSort,10000,Ordenado descendente,1,0,0,0,ABC123
-1,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-2,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-3,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-4,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-5,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-6,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-7,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-8,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-9,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-10,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-11,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-12,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-13,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-14,HipSort,10000,Casi ordenado 5%,3,0,0,0,ABC123
-15,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-16,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-17,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-18,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-19,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-20,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-21,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-22,HipSort,10000,Casi ordenado 5%,3,0,0,0,ABC123
-23,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-24,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-25,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-26,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-27,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-28,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-29,HipSort,10000,Casi ordenado 5%,2,0,0,0,ABC123
-30,HipSort,10000,Casi ordenado 5%,1,0,0,0,ABC123
-1,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-2,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-3,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-4,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-5,HipSort,10000,Duplicados 10-20,1,0,0,0,ABC123
-6,HipSort,10000,Duplicados 10-20,1,0,0,0,ABC123
-7,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-8,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-9,HipSort,10000,Duplicados 10-20,3,0,0,0,ABC123
-10,HipSort,10000,Duplicados 10-20,1,0,0,0,ABC123
-11,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-12,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-13,HipSort,10000,Duplicados 10-20,1,0,0,0,ABC123
-14,HipSort,10000,Duplicados 10-20,1,0,0,0,ABC123
-15,HipSort,10000,Duplicados 10-20,1,0,0,0,ABC123
-16,HipSort,10000,Duplicados 10-20,3,0,0,0,ABC123
-17,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-18,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-19,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-20,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-21,HipSort,10000,Duplicados 10-20,1,0,0,0,ABC123
-22,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-23,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-24,HipSort,10000,Duplicados 10-20,1,0,0,0,ABC123
-25,HipSort,10000,Duplicados 10-20,1,0,0,0,ABC123
-26,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-27,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-28,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-29,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
-30,HipSort,10000,Duplicados 10-20,2,0,0,0,ABC123
+1,QuickSort,100000,Aleatorio uniforme,15,0,0,0,ABC123
+2,QuickSort,100000,Aleatorio uniforme,22,0,0,0,ABC123
+3,QuickSort,100000,Aleatorio uniforme,21,0,0,0,ABC123
+4,QuickSort,100000,Aleatorio uniforme,18,0,0,0,ABC123
+5,QuickSort,100000,Aleatorio uniforme,21,0,0,0,ABC123
+6,QuickSort,100000,Aleatorio uniforme,22,0,0,0,ABC123
+7,QuickSort,100000,Aleatorio uniforme,23,0,0,0,ABC123
+8,QuickSort,100000,Aleatorio uniforme,17,0,0,0,ABC123
+9,QuickSort,100000,Aleatorio uniforme,14,0,0,0,ABC123
+10,QuickSort,100000,Aleatorio uniforme,22,0,0,0,ABC123
+11,QuickSort,100000,Aleatorio uniforme,22,0,0,0,ABC123
+12,QuickSort,100000,Aleatorio uniforme,19,0,0,0,ABC123
+13,QuickSort,100000,Aleatorio uniforme,24,0,0,0,ABC123
+14,QuickSort,100000,Aleatorio uniforme,17,0,0,0,ABC123
+15,QuickSort,100000,Aleatorio uniforme,12,0,0,0,ABC123
+16,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+17,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+18,QuickSort,100000,Aleatorio uniforme,12,0,0,0,ABC123
+19,QuickSort,100000,Aleatorio uniforme,11,0,0,0,ABC123
+20,QuickSort,100000,Aleatorio uniforme,10,0,0,0,ABC123
+21,QuickSort,100000,Aleatorio uniforme,12,0,0,0,ABC123
+22,QuickSort,100000,Aleatorio uniforme,14,0,0,0,ABC123
+23,QuickSort,100000,Aleatorio uniforme,18,0,0,0,ABC123
+24,QuickSort,100000,Aleatorio uniforme,17,0,0,0,ABC123
+25,QuickSort,100000,Aleatorio uniforme,17,0,0,0,ABC123
+26,QuickSort,100000,Aleatorio uniforme,20,0,0,0,ABC123
+27,QuickSort,100000,Aleatorio uniforme,24,0,0,0,ABC123
+28,QuickSort,100000,Aleatorio uniforme,22,0,0,0,ABC123
+29,QuickSort,100000,Aleatorio uniforme,23,0,0,0,ABC123
+30,QuickSort,100000,Aleatorio uniforme,19,0,0,0,ABC123
