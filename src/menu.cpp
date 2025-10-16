@@ -1,79 +1,141 @@
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <chrono>
 #include "ordenamientos.h"
+#include <iostream>
+#include <vector>
+#include <chrono>
+#include <algorithm>
+#include <random>
+#include <fstream> 
 
 using namespace std;
-using namespace std::chrono;
 
-void generarDatos(int* arr, int n) {
-    for (int i = 0; i < n; i++)
-        arr[i] = rand() % n;
+
+long long comparaciones = 0;
+long long intercambios = 0;
+int profundidad = 0;
+
+
+string nombrePatron(int opcionSemilla) {
+    switch(opcionSemilla) {
+        case 1: return "Aleatorio uniforme";
+        case 2: return "Ordenado ascendente";
+        case 3: return "Ordenado descendente";
+        case 4: return "Casi ordenado 5%";
+        case 5: return "Duplicados 10-20";
+        default: return "Desconocido";
+    }
 }
 
-void mostrarArreglo(int* arr, int n) {
-    for (int i = 0; i < n; i++)
-        cout << arr[i] << " ";
-    cout << endl;
+// Funciones de generaciÛn de arreglos
+vector<int> generarArreglo(int size, int tipoSemilla) {
+    vector<int> arr(size);
+    random_device rd;
+    mt19937 gen(rd());
+    
+    switch(tipoSemilla) {
+        case 1: { // Aleatorio uniforme
+            uniform_int_distribution<> dis(1, 100000);
+            for (int i = 0; i < size; ++i) arr[i] = dis(gen);
+            break;
+        }
+        case 2: // Ordenado ascendente
+            for (int i = 0; i < size; ++i) arr[i] = i+1;
+            break;
+        case 3: // Ordenado descendente
+            for (int i = 0; i < size; ++i) arr[i] = size-i;
+            break;
+        case 4: { // Casi ordenado (5% aleatorio)
+            for (int i = 0; i < size; ++i) arr[i] = i+1;
+            uniform_int_distribution<> dis(0, size-1);
+            for (int i = 0; i < size*0.05; ++i) {
+                swap(arr[dis(gen)], arr[dis(gen)]);
+            }
+            break;
+        }
+        case 5: { // Con duplicados (10ñ20 valores ˙nicos)
+            uniform_int_distribution<> dis(1, 20);
+            for (int i = 0; i < size; ++i) arr[i] = dis(gen);
+            break;
+        }
+        default:
+            break;
+    }
+    return arr;
 }
 
+// FunciÛn men˙
+void menu() {
+    int opcionAlgoritmo, opcionTamano, opcionSemilla;
+    vector<int> tamanos = {1000, 10000, 100000};
+
+    cout << "=== MEN⁄ DE ORDENAMIENTO ===\n";
+    cout << "1. QuickSort\n";
+    cout << "2. HeapSort\n";
+    cout << "Elige algoritmo: ";
+    cin >> opcionAlgoritmo;
+
+    cout << "TamaÒo del arreglo:\n";
+    cout << "1. 1000\n2. 10000\n3. 100000\nElige opciÛn: ";
+    cin >> opcionTamano;
+    int N = tamanos[opcionTamano-1];
+
+    cout << "Tipo de semilla:\n";
+    cout << "1. Aleatorio uniforme\n2. Ordenado ascendente\n3. Ordenado descendente\n";
+    cout << "4. Casi ordenado (5%)\n5. Con duplicados (10-20 valores ˙nicos)\nElige opciÛn: ";
+    cin >> opcionSemilla;
+
+    // Abrir archivo para guardar resultados
+    ofstream archivo("resultados_ordenamiento.txt", ios::out);
+    if (!archivo.is_open()) {
+        cerr << "Error al abrir el archivo para guardar resultados.\n";
+        return;
+    }
+
+    archivo << "IteraciÛn,Algoritmo,N,PatrÛn,Tiempo(ms),Comparaciones,Intercambios,Profundidad,CommitHash\n";
+
+    // Ejecutar 30 veces
+    for (int iter = 0; iter < 30; ++iter) {
+        vector<int> arr = generarArreglo(N, opcionSemilla);
+
+        comparaciones = 0;
+        intercambios = 0;
+        profundidad = 0;
+
+        auto inicio = chrono::high_resolution_clock::now();
+
+        if (opcionAlgoritmo == 1) {
+            quickSort(arr.data(), 0, N-1);
+        } else {
+            heapSort(arr.data(), N);
+        }
+
+        auto fin = chrono::high_resolution_clock::now();
+        auto tiempo = chrono::duration_cast<chrono::milliseconds>(fin - inicio).count();
+
+        string algoritmo = (opcionAlgoritmo==1 ? "QuickSort" : "HeapSort");
+        string patron = nombrePatron(opcionSemilla);
+        string commitHash = "ABC123";
+
+        cout << "IteraciÛn " << iter+1 << ": "
+             << "Algoritmo=" << algoritmo
+             << ", N=" << N
+             << ", PatrÛn=" << patron
+             << ", Tiempo=" << tiempo << "ms"
+             << ", Comparaciones=" << comparaciones
+             << ", Intercambios=" << intercambios
+             << ", Profundidad=" << profundidad
+             << ", CommitHash=" << commitHash << "\n";
+
+        archivo << iter+1 << "," << algoritmo << "," << N << "," << patron << "," 
+                << tiempo << "," << comparaciones << "," << intercambios << "," 
+                << profundidad << "," << commitHash << "\n";
+    }
+
+    archivo.close();
+    cout << "\nResultados guardados en 'resultados_ordenamiento.txt'\n";
+}
+
+// FunciÛn principal
 int main() {
-    // üîí Semilla fija para generar siempre los mismos n√∫meros
-    srand(12345);  
-
-    int opcionAlgoritmo, opcionTamano;
-
-    do {
-        cout << "\n==============================\n";
-        cout << "      MENU DE ORDENAMIENTO     \n";
-        cout << "==============================\n";
-        cout << "1. HeapSort\n";
-        cout << "2. QuickSort\n";
-        cout << "3. Salir\n";
-        cout << "Seleccione el algoritmo: ";
-        cin >> opcionAlgoritmo;
-
-        if (opcionAlgoritmo == 3) break;
-
-        cout << "\nSeleccione el tama√±o del arreglo:\n";
-        cout << "1. 1,000 elementos\n";
-        cout << "2. 10,000 elementos\n";
-        cout << "3. 100,000 elementos\n";
-        cout << "Opcion: ";
-        cin >> opcionTamano;
-
-        int n = (opcionTamano == 1) ? 1000 : (opcionTamano == 2) ? 10000 : 100000;
-
-        // ‚úÖ Mantiene el mismo conjunto aleatorio siempre
-        int* arr = new int[n];
-        srand(12345);  // ‚Üê Semilla fija para cada generaci√≥n (reproducible)
-        generarDatos(arr, n);
-
-        cout << "\nArreglo original (primeros 20 elementos):\n";
-        for (int i = 0; i < min(n,20); i++) cout << arr[i] << " ";
-        cout << (n > 20 ? "...\n" : "\n");
-
-        auto inicio = steady_clock::now();
-
-        if (opcionAlgoritmo == 1)
-            heapSort(arr, n);
-        else if (opcionAlgoritmo == 2)
-            quickSort(arr, 0, n - 1);
-
-        auto fin = steady_clock::now();
-        auto tiempo_ms = duration_cast<milliseconds>(fin - inicio).count();
-
-        cout << "\nArreglo ordenado (primeros 20 elementos):\n";
-        for (int i = 0; i < min(n,20); i++) cout << arr[i] << " ";
-        cout << (n > 20 ? "...\n" : "\n");
-
-        cout << "\nTiempo de ejecucion: " << tiempo_ms << " ms\n";
-
-        delete[] arr;
-
-    } while (opcionAlgoritmo != 3);
-
-    cout << "\nPrograma finalizado.\n";
+    menu();
     return 0;
 }
