@@ -1,2 +1,0 @@
-Algoritmo: HeapSort | Tamaño: 1000 | Tiempo: 242 ms
-Algoritmo: HeapSort | Tamaño: 100000 | Tiempo: 42781 ms

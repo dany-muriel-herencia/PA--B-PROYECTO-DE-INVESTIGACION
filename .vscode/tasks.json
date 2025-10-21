@@ -4,13 +4,14 @@
             "type": "cppbuild",
             "label": "C/C++: g++.exe compilar archivo activo",
             "command": "C:\\mingw64\\bin\\g++.exe",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
+           "args": [
+    "-fdiagnostics-color=always",
+    "-g",
+    "${file}",
+    "-o",
+    "${fileDirname}\\${fileBasenameNoExtension}.exe",
+    "-mconsole"  // <-- ¡ESTO ES LO QUE DEBES AÑADIR!
+],
             "options": {
                 "cwd": "${fileDirname}"
             },

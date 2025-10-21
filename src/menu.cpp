@@ -23,25 +23,24 @@ string nombrePatron(int opcionSemilla) {
     }
 }
 
-// Funciones de generación de arreglos
 vector<int> generarArreglo(int size, int tipoSemilla) {
     vector<int> arr(size);
     random_device rd;
     mt19937 gen(rd());
     
     switch(tipoSemilla) {
-        case 1: { // Aleatorio uniforme
+        case 1: { 
             uniform_int_distribution<> dis(1, 100000);
             for (int i = 0; i < size; ++i) arr[i] = dis(gen);
             break;
         }
-        case 2: // Ordenado ascendente
+        case 2: 
             for (int i = 0; i < size; ++i) arr[i] = i+1;
             break;
-        case 3: // Ordenado descendente
+        case 3: 
             for (int i = 0; i < size; ++i) arr[i] = size-i;
             break;
-        case 4: { // Casi ordenado (5% aleatorio)
+        case 4: { 
             for (int i = 0; i < size; ++i) arr[i] = i+1;
             uniform_int_distribution<> dis(0, size-1);
             for (int i = 0; i < size*0.05; ++i) {
@@ -49,7 +48,7 @@ vector<int> generarArreglo(int size, int tipoSemilla) {
             }
             break;
         }
-        case 5: { // Con duplicados (10–20 valores únicos)
+        case 5: { 
             uniform_int_distribution<> dis(1, 20);
             for (int i = 0; i < size; ++i) arr[i] = dis(gen);
             break;
@@ -60,7 +59,7 @@ vector<int> generarArreglo(int size, int tipoSemilla) {
     return arr;
 }
 
-// Función menú
+
 void menu() {
     int opcionAlgoritmo, opcionTamano, opcionSemilla;
     vector<int> tamanos = {1000, 10000, 100000};
@@ -92,17 +91,58 @@ void menu() {
         opcionSemilla = 1;
     }
 
+    // Archivo de resultados
     ofstream archivo("resultados_ordenamiento.txt", ios::out);
     if (!archivo.is_open()) {
         cerr << "Error al abrir el archivo para guardar resultados.\n";
         return;
     }
-
     archivo << "Iteración,Algoritmo,N,Patrón,Tiempo(ms),Comparaciones,Intercambios,Profundidad,CommitHash\n";
 
-    // Ejecutar 30 veces
+    // Asignar una semilla fija por patrón
+    unsigned int semillaFija;
+    switch(opcionSemilla) {
+        case 1: semillaFija = 111; break; 
+        case 2: semillaFija = 222; break; 
+        case 3: semillaFija = 333; break; 
+        case 4: semillaFija = 444; break; 
+        case 5: semillaFija = 555; break; 
+        default: semillaFija = 123; break;
+    }
+
+    mt19937 gen(semillaFija); // Generador con semilla fija
+
+    
     for (int iter = 0; iter < 30; ++iter) {
-        vector<int> arr = generarArreglo(N, opcionSemilla);
+        vector<int> arr(N);
+
+        // Generar arreglo según el tipo de semilla
+        switch(opcionSemilla) {
+            case 1: { 
+                uniform_int_distribution<> dis(1, 100000);
+                for (int i = 0; i < N; ++i) arr[i] = dis(gen);
+                break;
+            }
+            case 2: 
+                for (int i = 0; i < N; ++i) arr[i] = i+1;
+                break;
+            case 3: 
+                for (int i = 0; i < N; ++i) arr[i] = N-i;
+                break;
+            case 4: { 
+                for (int i = 0; i < N; ++i) arr[i] = i+1;
+                uniform_int_distribution<> dis(0, N-1);
+                for (int i = 0; i < N*0.05; ++i) {
+                    swap(arr[dis(gen)], arr[dis(gen)]);
+                }
+                break;
+            }
+            case 5: { 
+                uniform_int_distribution<> dis(1, 20);
+                for (int i = 0; i < N; ++i) arr[i] = dis(gen);
+                break;
+            }
+        }
 
         comparaciones = 0;
         intercambios = 0;
@@ -141,9 +181,3 @@ void menu() {
     archivo.close();
     cout << "\nResultados guardados en 'resultados_ordenamiento.txt'\n";
 }
-
-int main() {
-    menu();
-    return 0;
-}
-
