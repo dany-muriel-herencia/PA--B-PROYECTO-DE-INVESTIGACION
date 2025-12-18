@@ -1,0 +1,5 @@
+104|Suite Presidencial|250|Disponible
+103|Suite|150|Disponible
+102|Doble|80|Disponible
+101|Simple|50|Disponible
+105|Simple|50|Disponible

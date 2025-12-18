@@ -1,0 +1,5 @@
+Desayuno Incluido|100|Alimento|15
+WiFi Premium|100|Conectividad|10
+Servicio de Limpieza|100|Servicio|20
+papitas lays|96|Comida|1
+papas_fritas|3|Comida|3

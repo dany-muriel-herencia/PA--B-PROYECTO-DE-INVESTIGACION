@@ -1,0 +1,354 @@
+:root {
+    --primary: #000000;
+    --primary-light: #000000;
+    --accent: #FFD700;
+    /* Gold Puro Brillante */
+    --accent-glow: rgba(255, 215, 0, 0.4);
+    --bg: #000000;
+    --white: #ffffff;
+    --occupied: #FF0000;
+    /* Rojo Fuerte */
+    --available: #00FF00;
+    /* Verde Neón */
+    --maint: #FFBB00;
+    /* Naranja Intenso */
+    --text: #ffffff;
+    --text-muted: #ffffff;
+    --radius: 0px;
+    /* Bordes Rectos Nítidos */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: var(--radius) !important;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* LOGIN */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('/static/hotel_lobby_luxury.png') no-repeat center center/cover;
+    position: relative;
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.login-box {
+    background: #000;
+    padding: 4rem;
+    width: 100%;
+    max-width: 500px;
+    border: 3px solid var(--accent);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.login-box h2 {
+    color: var(--accent);
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-bottom: 1rem;
+}
+
+.login-box p {
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 800;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 1.2rem;
+    background: #111;
+    border: 2px solid #333;
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* BUTTONS */
+.btn-primary {
+    background: var(--accent);
+    color: #000;
+    font-weight: 900;
+    padding: 1.2rem;
+    border: 2px solid var(--accent);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: #000;
+    color: var(--accent);
+}
+
+.btn-logout {
+    background: #000;
+    color: #FF0000;
+    border: 2px solid #FF0000;
+    padding: 0.5rem 1rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.btn-logout:hover {
+    background: #FF0000;
+    color: #000;
+}
+
+/* DARK DASHBOARD */
+header {
+    background: #000;
+    border-bottom: 3px solid var(--accent);
+    padding: 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header-content h1 {
+    color: var(--accent);
+    letter-spacing: 5px;
+}
+
+nav {
+    background: #111;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #333;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 1.5rem 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    color: var(--accent);
+    background: #000;
+}
+
+main {
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* HERO */
+.hero-section {
+    position: relative;
+    height: 400px;
+    border: 2px solid #333;
+    margin-bottom: 4rem;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+}
+
+.hero-text h2 {
+    font-size: 3.5rem;
+    color: var(--accent);
+    font-weight: 900;
+}
+
+/* GRID & CARDS */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: #111;
+    border: 2px solid #222;
+}
+
+.card:hover {
+    border-color: var(--accent);
+}
+
+.card-header {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: var(--accent);
+}
+
+.card.Disponible {
+    border-top: 10px solid var(--available);
+}
+
+.card.Ocupada {
+    border-top: 10px solid var(--occupied);
+}
+
+.card.Mantenimiento {
+    border-top: 10px solid var(--maint);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 2px solid #333;
+}
+
+.status-badge.Disponible {
+    color: var(--available);
+    border-color: var(--available);
+}
+
+.status-badge.Ocupada {
+    color: var(--occupied);
+    border-color: var(--occupied);
+}
+
+.status-badge.Mantenimiento {
+    color: var(--maint);
+    border-color: var(--maint);
+}
+
+/* TABLES */
+.table-responsive {
+    background: #000;
+    border: 2px solid #333;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    background: #111;
+    color: var(--accent);
+    padding: 1.5rem;
+    text-align: left;
+    border-bottom: 2px solid #333;
+}
+
+.data-table td {
+    padding: 1.5rem;
+    border-bottom: 1px solid #222;
+    font-weight: 700;
+}
+
+/* MODALS */
+.modal {
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #000;
+    border: 3px solid var(--accent);
+    padding: 4rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.loading {
+    color: var(--accent);
+    font-weight: 900;
+    text-align: center;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-btn {
+        padding: 1rem;
+        text-align: center;
+    }
+}

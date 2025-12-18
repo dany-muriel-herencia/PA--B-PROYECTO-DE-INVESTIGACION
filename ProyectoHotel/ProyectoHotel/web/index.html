@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA HOTELERO | Los Hermanos Mendoza</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <!-- LOGIN VIEW -->
+    <div id="login-view" class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h2>ROYAL SUITE</h2>
+                <p>BIENVENIDO AL SISTEMA</p>
+            </div>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>TIPO DE USUARIO</label>
+                    <select id="login-tipo" onchange="toggleLoginFields()">
+                        <option value="3">Cliente</option>
+                        <option value="1">Administrador</option>
+                        <option value="2">Empleado</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label id="lbl-user">IDENTIFICACIÓN</label>
+                    <input type="text" id="login-user" required placeholder="DNI o Usuario">
+                </div>
+
+                <div class="form-group" id="group-pass">
+                    <label>CONTRASEÑA</label>
+                    <input type="password" id="login-pass" placeholder="••••••••">
+                </div>
+
+                <div class="form-group" id="group-pass-note"
+                    style="display:none; font-size:0.8rem; color:var(--accent); text-align: center;">
+                    <i class="fa fa-info-circle"></i> Clientes nuevos: Ingrese su DNI para registrarse.
+                </div>
+
+                <button type="submit" class="btn-primary btn-block">INGRESAR <i
+                        class="fa fa-chevron-right"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- DASHBOARD VIEW -->
+    <div id="dashboard-view" class="hidden">
+        <header>
+            <div class="header-content">
+                <div class="brand">
+                    <h1>SISTEMA HOTELERO</h1>
+                </div>
+                <div class="user-info">
+                    <span id="user-display" style="color: var(--accent); font-weight: 700; letter-spacing: 1px;"></span>
+                    <button onclick="logout()" class="btn-logout btn-sm">SALIR</button>
+                </div>
+            </div>
+        </header>
+
+        <nav id="admin-nav" class="hidden">
+            <button class="nav-btn" onclick="showSection('habitaciones')">HABITACIONES</button>
+            <button class="nav-btn" onclick="showSection('empleados')">EMPLEADOS</button>
+            <button class="nav-btn" onclick="showSection('stock')">STOCK</button>
+        </nav>
+
+        <nav id="client-nav" class="hidden">
+            <button class="nav-btn" onclick="showSection('habitaciones')">RESERVAR</button>
+            <button class="nav-btn" onclick="showSection('restaurant')">RESTAURANTE</button>
+        </nav>
+
+        <main>
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <img src="/static/hotel_room_luxury.png" alt="Royal Suite" class="hero-image">
+                <div class="hero-text">
+                    <h2>BIENVENIDO</h2>
+                    <p>GESTIÓN DE LUJO Y EFICIENCIA.</p>
+                </div>
+            </div>
+
+            <!-- SECTION: HABITACIONES -->
+            <div id="section-habitaciones" class="content-section">
+                <div class="controls">
+                    <div>
+                        <h3>GESTIÓN DE HABITACIONES</h3>
+                        <p style="color: var(--text-muted);">ADMINISTRACIÓN DE DISPONIBILIDAD</p>
+                    </div>
+                    <button onclick="cargarHabitaciones()" class="btn-primary"><i class="fa fa-sync-alt"></i>
+                        ACTUALIZAR</button>
+                </div>
+                <div id="habitaciones-grid" class="grid-container">
+                    <p class="loading">SINCRONIZANDO...</p>
+                </div>
+            </div>
+
+            <!-- SECTION: EMPLEADOS -->
+            <div id="section-empleados" class="content-section hidden">
+                <div class="controls">
+                    <div>
+                        <h3>GESTIÓN DE EMPLEADOS</h3>
+                        <p style="color: var(--text-muted);">CONTROL DE PERSONAL</p>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="data-table" id="tabla-empleados">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>DNI</th>
+                                <th>Rol</th>
+                                <th>Sueldo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SECTION: STOCK -->
+            <div id="section-stock" class="content-section hidden">
+                <div class="controls">
+                    <div>
+                        <h3>GESTIÓN DE STOCK</h3>
+                        <p style="color: var(--text-muted);">INVENTARIO Y SUMINISTROS</p>
+                    </div>
+                    <button onclick="abrirModalStock()" class="btn-primary">AÑADIR STOCK</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="data-table" id="tabla-stock">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Categoría</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SECTION: RESTAURANTE -->
+            <div id="section-restaurant" class="content-section hidden">
+                <div class="controls">
+                    <div>
+                        <h3>RESTAURANTE</h3>
+                        <p style="color: var(--text-muted);">PEDIDOS Y COMANDA</p>
+                    </div>
+                </div>
+                <div id="restaurant-grid" class="grid-container"></div>
+            </div>
+
+            <footer
+                style="margin-top: 6rem; padding-top: 3rem; border-top: 1px solid var(--accent); text-align: center; color: var(--text-muted); font-size: 0.8rem; letter-spacing: 2px;">
+                <p>SISTEMA HOTELERO | HOTEL LOS HERMANOS MENDOZA</p>
+                <div
+                    style="margin-top: 2rem; color: var(--accent); font-size: 1.2rem; display: flex; justify-content: center; gap: 2rem;">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-reserva" class="modal hidden">
+        <div class="modal-content">
+            <h3>NUEVA RESERVA</h3>
+            <form onsubmit="procesarReserva(event)">
+                <input type="hidden" id="res-num">
+                <div class="form-group">
+                    <label>HABITACIÓN</label>
+                    <input type="text" id="res-num-display" disabled>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label>INGRESO</label>
+                        <input type="date" id="res-entrada" required>
+                    </div>
+                    <div class="col">
+                        <label>SALIDA</label>
+                        <input type="date" id="res-salida" required>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="button" class="btn-secondary" onclick="cerrarModal()"
+                        style="flex:1;">CANCELAR</button>
+                    <button type="submit" class="btn-primary" style="flex:2;">RESERVAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-stock" class="modal hidden">
+        <div class="modal-content">
+            <h3>AÑADIR SUMINISTRO</h3>
+            <form onsubmit="procesarAgregarStock(event)">
+                <div class="form-group">
+                    <label>PRODUCTO</label>
+                    <input type="text" id="stk-nombre" required>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label>CANTIDAD</label>
+                        <input type="number" id="stk-cantidad" required>
+                    </div>
+                    <div class="col">
+                        <label>PRECIO UNITARIO</label>
+                        <input type="number" id="stk-precio" step="0.5" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>CATEGORÍA</label>
+                    <select id="stk-tipo">
+                        <option value="Comida">Comida</option>
+                        <option value="Bebida">Bebida</option>
+                        <option value="Limpieza">Limpieza</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="button" class="btn-secondary" onclick="cerrarModalStock()"
+                        style="flex:1;">CERRAR</button>
+                    <button type="submit" class="btn-primary" style="flex:2;">GUARDAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
