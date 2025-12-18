@@ -10,7 +10,7 @@ private:
     vector<Factura> facturas;
 
 public:
-    Cliente(string n = "", string d = "", string c = "", string p = "");
+    Cliente(string n = "", string d = "", string p = "");
 
     void hacerReserva();
     void solicitarServicio();

@@ -1,8 +1,8 @@
 #include "Recepcionista.h"
 #include <iostream>
 
-Recepcionista::Recepcionista(string n, string d, string c, string p, int id, float sal)
-    : Empleado(n, d, c, p, id, sal, "Recepcionista") {}
+Recepcionista::Recepcionista(string n, string d, string p, int id, float sal)
+    : Empleado(n, d, p, id, sal, "Recepcionista") {}
 
 void Recepcionista::realizarTarea() {
     cout << "Atendiendo en recepcion..." << endl;

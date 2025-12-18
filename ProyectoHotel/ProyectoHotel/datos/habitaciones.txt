@@ -1,5 +1,5 @@
-104|Suite Presidencial|250|Disponible
-103|Suite|150|Disponible
-102|Doble|80|Disponible
+104|Suite Presidencial|250|Ocupada
+103|Suite|150|Ocupada
+102|Doble|80|Ocupada
 101|Simple|50|Disponible
 105|Simple|50|Disponible

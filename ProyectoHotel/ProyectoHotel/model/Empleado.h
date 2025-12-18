@@ -12,7 +12,7 @@ protected:
     Horario horario;
 
 public:
-    Empleado(string n, string d, string c, string p, int id, float sal, string pto);
+    Empleado(string n, string d, string p, int id, float sal, string pto);
     
     virtual void verDatos() const;
     virtual void realizarTarea() = 0; 

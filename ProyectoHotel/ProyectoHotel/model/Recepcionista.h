@@ -7,7 +7,7 @@
 
 class Recepcionista : public Empleado {
 public:
-    Recepcionista(string n, string d, string c, string p, int id, float sal);
+    Recepcionista(string n, string d, string p, int id, float sal);
 
     void realizarTarea() override;
     

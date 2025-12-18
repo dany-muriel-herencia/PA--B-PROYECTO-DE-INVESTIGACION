@@ -8,11 +8,10 @@ class Usuario {
 protected:
     string nombre;
     string dni;
-    string correo;
     string password;
 
 public:
-    Usuario(string n = "", string d = "", string c = "", string p = "");
+    Usuario(string n = "", string d = "", string p = "");
     virtual ~Usuario();
 
     virtual void verInformacion() const;

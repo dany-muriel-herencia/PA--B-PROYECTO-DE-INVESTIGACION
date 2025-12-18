@@ -1,8 +1,8 @@
 #include "Cliente.h"
 #include <iostream>
 
-Cliente::Cliente(string n, string d, string c, string p) 
-    : Usuario(n, d, c, p) {}
+Cliente::Cliente(string n, string d, string p) 
+    : Usuario(n, d, p) {}
 
 void Cliente::hacerReserva() {
     cout << "El cliente inicia proceso de reserva." << endl;

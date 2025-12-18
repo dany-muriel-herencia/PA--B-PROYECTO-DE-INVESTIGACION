@@ -1,8 +1,8 @@
 #include "Mecanico.h"
 #include <iostream>
 
-Mecanico::Mecanico(string n, string d, string c, string p, int id, float sal)
-    : Empleado(n, d, c, p, id, sal, "Mecanico") {}
+Mecanico::Mecanico(string n, string d, string p, int id, float sal)
+    : Empleado(n, d, p, id, sal, "Mecanico") {}
 
 void Mecanico::realizarTarea() {
     cout << "Mecanico listo para reparaciones." << endl;

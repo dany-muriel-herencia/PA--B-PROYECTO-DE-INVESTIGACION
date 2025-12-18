@@ -1,13 +1,13 @@
 #include "Usuario.h"
 #include <iostream>
 
-Usuario::Usuario(string n, string d, string c, string p) 
-    : nombre(n), dni(d), correo(c), password(p) {}
+Usuario::Usuario(string n, string d, string p) 
+    : nombre(n), dni(d), password(p) {}
 
 Usuario::~Usuario() {}
 
 void Usuario::verInformacion() const {
-    cout << "Usuario: " << nombre << " | DNI: " << dni << " | Correo: " << correo << endl;
+    cout << "Usuario: " << nombre << " | DNI: " << dni << endl;
 }
 
 void Usuario::iniciarSesion() {

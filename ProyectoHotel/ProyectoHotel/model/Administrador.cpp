@@ -2,8 +2,8 @@
 #include <iostream>
 #include <algorithm>
 
-Administrador::Administrador(string n, string d, string c, string p) 
-    : Usuario(n, d, c, p) {}
+Administrador::Administrador(string n, string d, string p) 
+    : Usuario(n, d, p) {}
 
 void Administrador::gestionarHabitaciones() {
     cout << "Entrando a modulo de gestion de habitaciones..." << endl;

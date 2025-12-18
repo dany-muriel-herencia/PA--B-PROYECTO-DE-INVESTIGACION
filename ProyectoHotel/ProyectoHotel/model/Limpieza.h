@@ -5,7 +5,7 @@
 
 class Limpieza : public Empleado {
 public:
-    Limpieza(string n, string d, string c, string p, int id, float sal);
+    Limpieza(string n, string d, string p, int id, float sal);
 
     void realizarTarea() override;
     void limpiarHabitacion(int numHab);

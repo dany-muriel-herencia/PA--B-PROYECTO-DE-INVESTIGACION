@@ -137,7 +137,7 @@ void cargarDatos() {
             getline(ss, nombre, '|');
             getline(ss, dni, '|');
             if(!nombre.empty()) {
-                clientes.push_back(new Cliente(nombre, dni, "email@dummy.com", "123"));
+                clientes.push_back(new Cliente(nombre, dni, "123"));
             }
         }
         fc.close();
@@ -148,10 +148,10 @@ void inicializarDatos() {
     cargarDatos(); 
 
     if (empleados.empty()) {
-        empleados.push_back(new Recepcionista("Ana Lopez", "1111", "ana@hotel.com", "123", 1, 1200));
-        empleados.push_back(new Limpieza("Carlos Ruiz", "2222", "carlos@hotel.com", "123", 2, 900));
-        empleados.push_back(new Cocinero("Luis Chef", "3333", "luis@hotel.com", "123", 3, 1500));
-        empleados.push_back(new Mecanico("Pedro Fix", "4444", "pedro@hotel.com", "123", 4, 1100));
+        empleados.push_back(new Recepcionista("Ana Lopez", "1111", "123", 1, 1200));
+        empleados.push_back(new Limpieza("Carlos Ruiz", "2222", "123", 2, 900));
+        empleados.push_back(new Cocinero("Luis Chef", "3333", "123", 3, 1500));
+        empleados.push_back(new Mecanico("Pedro Fix", "4444", "123", 4, 1100));
     }
 }
 
@@ -239,7 +239,7 @@ void adminAgregarStock() {
 }
 
 void menuAdministrador() {
-    Administrador admin("Admin Principal", "9999", "admin@hotel.com", "admin");
+    Administrador admin("Admin Principal", "9999", "admin");
     string pass;
     cout << "Ingrese password de administrador: ";
     cin >> pass;
@@ -418,7 +418,7 @@ void menuCliente() {
     }
     
     if(!clienteActual) {
-        clienteActual = new Cliente(nombre, dni, "email@dummy.com", "123");
+        clienteActual = new Cliente(nombre, dni, "123");
         clientes.push_back(clienteActual);
         guardarDatos();
         cout << "Bienvenido nuevo cliente!\n";
@@ -587,7 +587,7 @@ void headlessReservar(int num, string dni, string nombre, string fechaEntrada, s
     if(!clienteActual) {
         // Crear cliente si no existe
         // Pass default 123
-        clienteActual = new Cliente(nombre, dni, nombre + "@email.com", "123");
+        clienteActual = new Cliente(nombre, dni, "123");
         clientes.push_back(clienteActual);
         guardarDatos(); // Guardar el nuevo cliente
     }
@@ -715,8 +715,8 @@ int main(int argc, char* argv[]) {
             }
         }
         else if(cmd == "login" && argc >= 4) {
-             // hotel.exe login <tipo> <user> <pass>
-             string tipo = argv[2]; // 1, 2, 3
+             
+             string tipo = argv[2];
              string user = argv[3];
              string pass = argv[4];
              headlessLogin(tipo, user, pass);

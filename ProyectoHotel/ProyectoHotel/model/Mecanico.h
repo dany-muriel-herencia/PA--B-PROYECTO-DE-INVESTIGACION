@@ -7,7 +7,7 @@
 
 class Mecanico : public Empleado {
 public:
-    Mecanico(string n, string d, string c, string p, int id, float sal);
+    Mecanico(string n, string d, string p, int id, float sal);
 
     void realizarTarea() override;
     

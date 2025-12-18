@@ -1,8 +1,8 @@
 #include "Cocinero.h"
 #include <iostream>
 
-Cocinero::Cocinero(string n, string d, string c, string p, int id, float sal)
-    : Empleado(n, d, c, p, id, sal, "Cocinero") {}
+Cocinero::Cocinero(string n, string d, string p, int id, float sal)
+    : Empleado(n, d, p, id, sal, "Cocinero") {}
 
 void Cocinero::realizarTarea() {
     cout << nombre << " esta cocinando." << endl;

@@ -10,7 +10,7 @@ private:
     vector<Stock*> inventarioCocina; // Aggregation
 
 public:
-    Cocinero(string n, string d, string c, string p, int id, float sal);
+    Cocinero(string n, string d, string p, int id, float sal);
 
     void realizaTarea() { realizarTarea(); } // Alias if needed
     void realizarTarea() override;

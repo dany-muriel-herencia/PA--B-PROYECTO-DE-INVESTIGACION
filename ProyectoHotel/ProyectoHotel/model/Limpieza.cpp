@@ -1,8 +1,8 @@
 #include "Limpieza.h"
 #include <iostream>
 
-Limpieza::Limpieza(string n, string d, string c, string p, int id, float sal)
-    : Empleado(n, d, c, p, id, sal, "Limpieza") {}
+Limpieza::Limpieza(string n, string d, string p, int id, float sal)
+    : Empleado(n, d, p, id, sal, "Limpieza") {}
 
 void Limpieza::realizarTarea() {
     cout << nombre << " esta limpiando areas comunes." << endl;
